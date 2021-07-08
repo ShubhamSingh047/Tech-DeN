@@ -1,0 +1,66 @@
+.img {
+  display: block;
+  float: left;
+  position: relative;
+  width: 50%;
+  height: 70%;
+  padding: 10px 30px;
+  overflow: hidden;
+}
+img {
+  border-radius: 7px;
+  margin-top: 30px;
+  height: 614px;
+  width: 559px;
+}
+.form_signIn {
+  width: 50%;
+  height: 80vh;
+  float: right;
+}
+.form_signIn form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 410px;
+  height: 550px;
+  margin: 50px 150px;
+  text-align: left;
+  /* background-color: red; */
+}
+.checkbox_form {
+  display: absolute;
+  margin-left: -390px;
+  margin-top: 10px;
+}
+
+.form_signIn h2 {
+  position: absolute;
+  margin-bottom: 400px;
+  margin-left: 50px;
+  height: auto;
+  width: 300px;
+  font-size: 24px;
+  text-align: center;
+  font-weight: 800;
+}
+
+.remember_me {
+  position: relative;
+  margin-left: 22px;
+  margin-top: -18px;
+}
+.forget_psd {
+  position: relative;
+  margin-left: 255px;
+  margin-top: -20px;
+}
+.signUp_btn {
+  margin-left: 150px;
+  margin-top: 50px;
+  width: 100%;
+  background-color: #362bb2;
+  border: 2px solid #362bb2;
+  transform: translate(-36.5%);
+  color: white;
+}
