@@ -17,8 +17,10 @@ img {
   width: 50%;
   height: 80vh;
   float: right;
+  box-shadow: #8181a5;
 }
 .form_signIn form {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,15 +30,10 @@ img {
   text-align: left;
   /* background-color: red; */
 }
-.checkbox_form {
-  display: absolute;
-  margin-left: -390px;
-  margin-top: 10px;
-}
 
 .form_signIn h2 {
   position: absolute;
-  margin-bottom: 400px;
+  margin-bottom: 450px;
   margin-left: 50px;
   height: auto;
   width: 300px;
@@ -46,21 +43,78 @@ img {
 }
 
 .remember_me {
-  position: relative;
+  display: inline-block;
+  position: absolute;
   margin-left: 22px;
-  margin-top: -18px;
+  margin-top: 165px;
+  font-size: 15px;
+  color: #8181a5;
 }
+
 .forget_psd {
-  position: relative;
+  position: absolute;
   margin-left: 255px;
-  margin-top: -20px;
+  margin-top: 105px;
+  display: inline-block;
+  margin-bottom: -60px;
+  font-size: 15px;
+  color: #8181a5;
 }
-.signUp_btn {
+.signIn_btn {
   margin-left: 150px;
-  margin-top: 50px;
+  margin-top: 70px;
   width: 100%;
   background-color: #362bb2;
   border: 2px solid #362bb2;
   transform: translate(-36.5%);
   color: white;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: black;
+  margin-bottom: 5px;
+  font-size: 12px;
+  padding: 20px 0 12px 0;
+  outline: none;
+}
+
+input {
+  color: #000;
+  font-size: 14px;
+  padding: 7px;
+  opacity: 100%;
+  outline: none;
+  margin-bottom: -7px;
+  /* text-decoration: underline; */
+}
+
+#checkbox {
+  position: absolute;
+  margin-top: 160px;
+}
+.signIn_txt {
+  border: 10px;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #8181a5;
+}
+
+hr {
+  border: 0.01px solid #d5d5db;
+}
+
+.signIn_btn_ggl {
+  position: absolute;
+  margin-left: 150px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 450px;
+  width: 100%;
+  background-color: #ebebeb;
+  border: 2px solid #eceef5;
+  transform: translate(-36.5%);
+  color: #8083a3;
 }

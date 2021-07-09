@@ -13,25 +13,32 @@ function SignIn() {
       <div className="form_signIn">
         <form action="submit">
           <h2>Welcome to TechHouse Sign In to get started</h2>
-          Enter your details to procced further
-          <label htmlFor="">Email or Username</label>
+          <p className="signIn_txt">Enter your details to procced further</p>
+
+          <label htmlFor="">Email </label>
+
           <input
             type="email"
             id="fname"
             s
             name="email"
-            placeholder="enter email"
+            placeholder="Enter email"
           />
+          <hr />
           <label htmlFor="">Password</label>
           <input type="password" placeholder="********" />
-          <input type="checkbox" id="checkbox" className="checkbox_form" />
+          <hr />
+          <input type="checkbox" id="checkbox" />
+
           <label htmlFor="checkbox" className="remember_me">
             Remember Me
           </label>
+
           <a href="#" className="forget_psd">
             Forget password?
           </a>
-          <button className="signUp_btn">SignUp</button>
+          <button className="signIn_btn">Sign In</button>
+          <button className="signIn_btn_ggl">Sign Up with Google</button>
         </form>
       </div>
     </div>
