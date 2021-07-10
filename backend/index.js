@@ -8,6 +8,7 @@ const cookieParser = require("cookie-parser");
 const cors  = require("cors")
 
 
+
 //DB connection
 mongoose.connect(process.env.DATABASE, {
     useNewUrlParser: true,
@@ -20,15 +21,23 @@ mongoose.connect(process.env.DATABASE, {
         console.log("DB not connected");
     })
 
-
 //middlewares
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors());
 
 
-const port = process.env.PORT || 8000;
+// my Routes
+const authRoute = require("./routes/auth")
+const userRoute = require("./routes/user")
 
+//my routes (middleware)
+app.use("/api", authRoute);
+app.use("/api", userRoute)
+
+
+//port setup
+const port = process.env.PORT || 8000;
 app.listen(port, () => {
     console.log(`server is running on port ${port}`);
 })
