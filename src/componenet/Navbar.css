@@ -52,3 +52,6 @@ button {
   color: #fff;
   border: 2px solid #362bb2;
 }
+.NavLink {
+  text-decoration: none;
+}

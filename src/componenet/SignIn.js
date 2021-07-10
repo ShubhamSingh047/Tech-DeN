@@ -1,5 +1,6 @@
 import React from "react";
 import "./SignIn.css";
+import ReactLogo from "./logo/google-icon.svg";
 
 function SignIn() {
   return (
@@ -38,7 +39,10 @@ function SignIn() {
             Forget password?
           </a>
           <button className="signIn_btn">Sign In</button>
-          <button className="signIn_btn_ggl">Sign Up with Google</button>
+          <button className="signIn_btn_ggl">
+            <img src={ReactLogo} alt="google logo" />
+            <p>Sign Up with Google</p>
+          </button>
         </form>
       </div>
     </div>

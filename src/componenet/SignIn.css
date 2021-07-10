@@ -53,8 +53,8 @@ img {
 
 .forget_psd {
   position: absolute;
-  margin-left: 255px;
-  margin-top: 105px;
+  margin-left: 282px;
+  margin-top: 109px;
   display: inline-block;
   margin-bottom: -60px;
   font-size: 15px;
@@ -62,7 +62,7 @@ img {
 }
 .signIn_btn {
   margin-left: 150px;
-  margin-top: 70px;
+  margin-top: 90px;
   width: 100%;
   background-color: #362bb2;
   border: 2px solid #362bb2;
@@ -75,7 +75,6 @@ label {
   flex-direction: column;
   justify-content: space-around;
   color: black;
-  margin-bottom: 5px;
   font-size: 12px;
   padding: 20px 0 12px 0;
   outline: none;
@@ -84,7 +83,7 @@ label {
 input {
   color: #000;
   font-size: 14px;
-  padding: 7px;
+  padding: 7px 0 10px 0;
   opacity: 100%;
   outline: none;
   margin-bottom: -7px;
@@ -111,10 +110,31 @@ hr {
   margin-left: 150px;
   font-size: 12px;
   font-weight: 600;
-  margin-top: 450px;
+  margin-top: 400px;
   width: 100%;
   background-color: #ebebeb;
   border: 2px solid #eceef5;
   transform: translate(-36.5%);
   color: #8083a3;
+}
+
+.signIn_btn_ggl:hover {
+  border: 1px solid #362bb2;
+  background-color: #362bb2;
+  color: #fff;
+}
+.signIn_btn_ggl img {
+  position: absolute;
+  margin: -5px 10px 12px -100px;
+  height: 20px;
+  width: 30px;
+  padding-bottom: 2px;
+  justify-content: center;
+}
+.signIn_btn_ggl p {
+  position: absolute;
+  float: right;
+  margin-top: -6px;
+  font-size: 15px;
+  margin-left: 140px;
 }
