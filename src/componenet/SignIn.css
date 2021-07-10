@@ -118,11 +118,11 @@ hr {
   color: #8083a3;
 }
 
-/* .signIn_btn_ggl:hover {
+.signIn_btn_ggl:hover {
   border: 1px solid #362bb2;
   background-color: #362bb2;
   color: #fff;
-} */
+}
 .signIn_btn_ggl img {
   position: absolute;
   margin: -5px 10px 12px -100px;
