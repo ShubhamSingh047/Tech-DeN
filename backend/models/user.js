@@ -4,7 +4,7 @@ const { v1: uuidv1 } = require("uuid");
 
 const userSchema = new mongoose.Schema(
   {
-    name: {
+    firstname: {
       type: String,
       required: true,
       maxlength: 32,
@@ -47,7 +47,11 @@ userSchema
 
 userSchema.methods = {
   authenticate: function (plainpassword) {
-    return this.securePassword(plainpassword) === this.encry_password;
+    if (this.securePassword(plainpassword) === this.encry_password) {
+      return true;
+    } else {
+      return false;
+    }
   },
 
   securePassword: function (plainpassword) {
