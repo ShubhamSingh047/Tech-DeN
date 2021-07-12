@@ -100,7 +100,7 @@ export default function SignUp() {
       <div className="success-message">
         <p>
           New account created successfully. Please{" "}
-          <Link to="/signin" className="signinlink">
+          <Link to="/" className="signinlink">
             Sign here
           </Link>
         </p>
@@ -129,7 +129,7 @@ export default function SignUp() {
             <br />
             <span style={{ fontWeight: "bold" }}>SignUp to get Started</span>
           </Typography>
-          {successMessaage()}
+          {success && successMessaage()}
           {error && errorMessage()}
           <form className={classes.form} noValidate>
             <Grid container spacing={2}>

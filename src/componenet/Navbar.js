@@ -12,7 +12,7 @@ const Navbar = () => {
       <ul className="list">
         {!isAuthenticated() && (
           <>
-            <NavLink className="NavLink" to="/signin">
+            <NavLink className="NavLink" to="/">
               <li>
                 <button>Sign In</button>
               </li>
@@ -26,7 +26,7 @@ const Navbar = () => {
         )}
 
         {isAuthenticated() && (
-          <NavLink className="NavLink" to="/signin">
+          <NavLink className="NavLink" to="/">
             <li>
               <button
                 className="signUp"

@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState } from "react";
+import React from "react";
 import { Route, Switch, BrowserRouter } from "react-router-dom";
 import Navbar from "./componenet/Navbar";
 import SignIn from "./componenet/SignIn";
@@ -16,7 +16,7 @@ function App() {
     <BrowserRouter>
       {/* <Navbar /> */}
       <Switch>
-        <Route path="/signin" component={SignIn} />
+        <Route path="/" exact component={SignIn} />
         <Route exact path="/signup" component={Signup} />
         <PrivateRoutes exact path="/user/dashboard" component={UserDashboard} />
         <AdminRoutes path="/admin/dashboard" exact component={AdminDashboard} />
