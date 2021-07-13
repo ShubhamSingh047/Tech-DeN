@@ -10,6 +10,7 @@ import UserDashboard from "./Dashboard/UserDashBoard";
 import AdminDashboard from "./Dashboard/AdminDashBoard";
 import UserDash from "./Dashboard/UserDashBoard";
 import Error from "./componenet/Error";
+import ProfileBase from "./Profile/ProfileBase";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       {/* <Navbar /> */}
       <Switch>
         <Route path="/" exact component={SignIn} />
+        <Route exact path="/profile" component={ProfileBase} />
         <Route exact path="/signup" component={Signup} />
         <PrivateRoutes exact path="/user/dashboard" component={UserDashboard} />
         <AdminRoutes path="/admin/dashboard" exact component={AdminDashboard} />
