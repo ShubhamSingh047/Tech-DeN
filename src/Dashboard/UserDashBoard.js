@@ -18,8 +18,14 @@ const UserDashboard = () => {
             Signout
           </button>
         </Link>
-        <Link to="/profile">
-          <button>Go to Profile</button>
+        <Link to="/user/dashboard/profile/general">
+          <button style={{ width: "150px" }}>General Profile</button>
+        </Link>
+        <Link to="/user/dashboard/profile/changepassword">
+          <button style={{ width: "150px" }}>ChangePassword</button>
+        </Link>
+        <Link to="/user/dashboard/profile/overview">
+          <button>Overview</button>
         </Link>
       </div>
     </>

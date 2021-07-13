@@ -8,9 +8,11 @@ import PrivateRoutes from "./auth/PrivateRoute";
 import AdminRoutes from "./auth/AdminRoutes";
 import UserDashboard from "./Dashboard/UserDashBoard";
 import AdminDashboard from "./Dashboard/AdminDashBoard";
-import UserDash from "./Dashboard/UserDashBoard";
 import Error from "./componenet/Error";
 import ProfileBase from "./Profile/ProfileBase";
+import GeneralProfile from "./Profile/Profile1";
+import ChangePassword from "./Profile/Profile2";
+import Overview from "./Profile/Profile3";
 
 function App() {
   return (
@@ -22,7 +24,22 @@ function App() {
         <Route exact path="/signup" component={Signup} />
         <PrivateRoutes exact path="/user/dashboard" component={UserDashboard} />
         <AdminRoutes path="/admin/dashboard" exact component={AdminDashboard} />
-        <Route path="/u/dash" exact component={UserDash} />
+        <Route
+          path="/user/dashboard/profile/general"
+          exact
+          component={GeneralProfile}
+        />
+        <Route
+          path="/user/dashboard/profile/changepassword"
+          exact
+          component={ChangePassword}
+        />
+        <Route
+          path="/user/dashboard/profile/overview"
+          exact
+          component={Overview}
+        />
+
         <Route component={Error} />
       </Switch>
     </BrowserRouter>

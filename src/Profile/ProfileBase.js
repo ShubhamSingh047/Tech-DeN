@@ -36,7 +36,7 @@ function ProfileBase({ children }) {
         </div>
       </div>
 
-      <div className="children">Start Here....{children}</div>
+      <div className="children">{children}</div>
     </div>
   );
 }
