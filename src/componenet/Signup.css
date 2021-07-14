@@ -21,3 +21,37 @@
   box-sizing: border-box;
   overflow: hidden;
 }
+.success-message{
+  width: 350px;
+  height: 30px;
+  background: #d4edda;
+  margin-top: 15px;
+  text-align: center;
+  border: 1px solid #d4edda;
+  border-radius: .25rem;
+}
+.success-message p {
+  margin-top: 5px;
+  color: #155724
+}
+
+.error-message{
+  width: 350px;
+  height: 30px;
+  background: #f5c6cb;
+  margin-top: 15px;
+  text-align: center;
+  border: 1px solid #f5c6cb;
+  border-radius: .25rem;
+} 
+.error-message p{
+  margin-top: 5px;
+  color: #721c24
+}
+
+.signinlink{
+  text-decoration: none;
+}
+.signinlink:hover{
+  text-decoration: underline;
+}

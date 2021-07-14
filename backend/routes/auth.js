@@ -1,12 +1,14 @@
 const express = require("express");
 const router = express.Router();
-const { signup, signin, signout } = require("../controllers/auth");
+const { signup, signin, signout, googlelogin } = require("../controllers/auth");
 const { check } = require("express-validator");
 
 router.post(
   "/signup",
   [
-    check("name", "name should be at least of 3 Char").isLength({ min: 3 }),
+    check("firstname", "firstname should be at least of 3 Char").isLength({
+      min: 3,
+    }),
     check("email", "email is required").isEmail(),
     check("password", "password should be at least 3 char").isLength({
       min: 3,
@@ -25,5 +27,7 @@ router.post(
 );
 
 router.get("/signout", signout);
+
+router.post("/googlelogin", googlelogin);
 
 module.exports = router;
