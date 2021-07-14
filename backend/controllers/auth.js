@@ -2,6 +2,11 @@ const User = require("../models/user");
 const { validationResult } = require("express-validator");
 const jwt = require("jsonwebtoken");
 const expressJwt = require("express-jwt");
+const { OAuth2Client } = require("google-auth-library");
+
+const client = new OAuth2Client(
+  "501834169926-3se3mm2s4568jhchs064b5of1tklfuna.apps.googleusercontent.com"
+);
 
 exports.signup = (req, res) => {
   const errors = validationResult(req);
@@ -65,8 +70,8 @@ exports.signin = (req, res) => {
       res.cookie("token", token, { expire: new Date() + 9999 });
 
       //send response to front end
-      const { _id, name, email, role } = user;
-      return res.json({ token, user: { _id, name, email, role } });
+      const { _id, firstname, email, role } = user;
+      return res.json({ token, user: { _id, firstname, email, role } });
     } catch (error) {
       console.log(error);
     }
@@ -108,4 +113,64 @@ exports.isAdmin = (req, res, next) => {
   }
 
   next();
+};
+
+exports.googlelogin = (req, res) => {
+  const { tokenId } = req.body;
+
+  client
+    .verifyIdToken({
+      idToken: tokenId,
+      audience:
+        "501834169926-3se3mm2s4568jhchs064b5of1tklfuna.apps.googleusercontent.com",
+    })
+    .then((response) => {
+      const { email_verified, name, email, given_name } = response.payload;
+      console.log(response.payload);
+      if (email_verified) {
+        User.findOne({ email }).exec((err, user) => {
+          if (err) {
+            return res.status(400).json({
+              error: "server error",
+            });
+          } else {
+            if (user) {
+              //create token
+              const token = jwt.sign({ _id: user._id }, process.env.SECRET);
+              //put token in cookie
+              res.cookie("token", token, { expire: new Date() + 9999 });
+
+              //send response to front end
+              const { _id, firstname, email, role } = user;
+              return res.json({ token, user: { _id, firstname, email, role } });
+            } else {
+              let password = email + process.env.SECRET;
+              let newUser = new User({
+                firstname: given_name,
+                email: email,
+                password: password,
+              });
+              newUser.save((err, data) => {
+                if (err) {
+                  return res.status(400).json({
+                    error: "not able to save in db",
+                  });
+                }
+                //create token
+                const token = jwt.sign({ _id: data._id }, process.env.SECRET);
+                //put token in cookie
+                res.cookie("token", token, { expire: new Date() + 9999 });
+
+                //send response to front end
+                const { _id, firstname, email, role } = newUser;
+                return res.json({
+                  token,
+                  user: { _id, firstname, email, role },
+                });
+              });
+            }
+          }
+        });
+      }
+    });
 };

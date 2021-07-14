@@ -3,7 +3,9 @@ import Base from "./core/Base";
 import "./SignIn.css";
 import ReactLogo from "./logo/google-icon.svg";
 import { Link, Redirect } from "react-router-dom";
-
+import { GoogleLogin } from "react-google-login";
+import axios from "axios";
+import { API } from "../backend";
 import { signin, authenticate, isAuthenticated } from "../auth/index";
 
 function SignIn() {
@@ -14,7 +16,7 @@ function SignIn() {
     loading: false,
     didRidirect: false,
   });
-  const { email, password, loading, error, didRidirect } = values;
+  const { email, password, didRidirect } = values;
   const { user } = isAuthenticated();
 
   const handleChange = (field) => (event) => {
@@ -46,6 +48,23 @@ function SignIn() {
         }
       })
       .catch(console.log("sign in requestt failed"));
+  };
+
+  const responseGoogle = (response) => {
+    console.log(response);
+    axios({
+      method: "POST",
+      url: `${API}/googlelogin`,
+      data: { tokenId: response.tokenId },
+    }).then((response) => {
+      authenticate(response.data, () => {
+        setValues({
+          ...values,
+          didRidirect: true,
+        });
+      });
+      console.log("Google login success", response);
+    });
   };
 
   const signinform = () => {
@@ -94,10 +113,20 @@ function SignIn() {
             <button onClick={onSubmit} className="signIn_btn ">
               Sign In
             </button>
+
             <button className="signIn_btn_ggl">
               <img src={ReactLogo} alt="google logo" />
               <p>Sign Up with Google</p>
             </button>
+            <div>
+              <GoogleLogin
+                clientId="501834169926-3se3mm2s4568jhchs064b5of1tklfuna.apps.googleusercontent.com"
+                buttonText="Login"
+                onSuccess={responseGoogle}
+                onFailure={responseGoogle}
+                cookiePolicy={"single_host_origin"}
+              />
+            </div>
           </form>
         </div>
       </div>
@@ -112,9 +141,9 @@ function SignIn() {
         return <Redirect to="/user/dashboard" />;
       }
     }
-    if (isAuthenticated()) {
-      return <Redirect to="/" />;
-    }
+    // if (isAuthenticated()) {
+    //   return <Redirect to="/" />;
+    // }
   };
 
   return (
