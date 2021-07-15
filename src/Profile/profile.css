@@ -1,3 +1,7 @@
+*:root{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 
 .topbar{
    position: absolute;
@@ -132,4 +136,111 @@
 }
 .setting img{
     cursor: pointer;
+}
+
+.general{
+    display: grid;
+    grid-template-columns: 375px 805px;
+}
+
+.leftside{
+    width: 374px ;
+    height: 600px;
+    border-right: 2px solid #ECEEF5;
+
+}
+.avatarProfile{
+    margin-top:38px ;
+    margin-left: 137px;
+    height: 100px;
+    width: 100px;
+    background: #eceef5;
+    border-radius: 5px;
+}
+
+.profileName{
+    margin-top: 16px;
+    margin-left: 137px;
+    font-size: 20px;
+    width: 100px;
+    height: 24px;
+
+}
+
+.professionName{
+    margin-top: 5px;
+    margin-left: 137px ;
+    font-size: 12px;
+    color: grey;
+}
+
+.generalInfo-panel{
+display: grid;
+margin: 35px auto;
+width: 270px;
+height: 55px;
+background: #eceef5;
+grid-template-columns: 45px 244px;
+border-radius: 7px;
+}
+.security-panel{
+    display: grid;
+    margin: 35px auto;
+    width: 270px;
+    height: 55px;
+    background: #eceef5;
+grid-template-columns: 45px 244px;
+border-radius: 7px;
+
+}
+
+.iconss{
+}
+.text-info-panel{
+margin: 5px 40px;
+}
+.panel-name-general{
+color: #7065EF;
+font-size: 14px;
+margin-top: 3px;
+}
+.panel-subname{
+    color:#8181A5;
+    font-size: 12px;
+    margin: 5px auto
+}
+.panel-name-security{
+    color: rgb(12, 11, 11);
+    font-size: 14px;
+    margin-top: 3px;
+    }
+
+.topname{
+        margin-top: 20px;
+        margin-left: 25px;
+        font-size: 17px;
+        font-weight: 500;
+    }
+.detailBox{
+margin-top: 30px;
+margin-left: 20px;
+display: grid;
+grid-template-rows: 80px 80px 80px 80px;
+grid-template-columns: 400px 400px;
+grid-column-gap: 20px;
+}
+.detailField{
+    width: 370px;
+border-bottom: 2px solid #ECEEF5;
+padding-top: 35px;
+padding-left: 5px;
+}
+.subHeader{
+    color:#8181A5 ;
+    font-size: 12px;
+}
+.fieldValue{
+    margin-top: 10px;
+    font-size: 14px;
+    
 }
