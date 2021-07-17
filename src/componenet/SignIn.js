@@ -4,6 +4,7 @@ import "./SignIn.css";
 import ReactLogo from "./logo/google-icon.svg";
 import { Link, Redirect } from "react-router-dom";
 import { GoogleLogin } from "react-google-login";
+import GoogleButton from "react-google-button";
 import axios from "axios";
 import { API } from "../backend";
 import { signin, authenticate, isAuthenticated } from "../auth/index";
@@ -114,19 +115,17 @@ function SignIn() {
               Sign In
             </button>
 
-            <button className="signIn_btn_ggl">
-              <img src={ReactLogo} alt="google logo" />
-              <p>Sign Up with Google</p>
-            </button>
-            <div>
-              <GoogleLogin
-                clientId="501834169926-3se3mm2s4568jhchs064b5of1tklfuna.apps.googleusercontent.com"
-                buttonText="Login"
-                onSuccess={responseGoogle}
-                onFailure={responseGoogle}
-                cookiePolicy={"single_host_origin"}
-              />
-            </div>
+            <GoogleLogin
+              clientId="501834169926-3se3mm2s4568jhchs064b5of1tklfuna.apps.googleusercontent.com"
+              buttonText="Login"
+              onSuccess={responseGoogle}
+              onFailure={responseGoogle}
+              cookiePolicy={"single_host_origin"}
+            />
+
+            {/* <img src={ReactLogo} alt="google logo" />
+              <p>Sign Up with Google</p> */}
+            <div></div>
           </form>
         </div>
       </div>
