@@ -6,7 +6,7 @@ import SignIn from "./componenet/SignIn";
 import Signup from "./componenet/SignUp";
 import PrivateRoutes from "./auth/PrivateRoute";
 import AdminRoutes from "./auth/AdminRoutes";
-import UserDashboard from "./Dashboard/UserDashBoard";
+import UserDashboard from "./MainDashBoard/Dashboard";
 import AdminDashboard from "./Dashboard/AdminDashBoard";
 import Error from "./componenet/Error";
 import ProfileBase from "./Profile/ProfileBase";
@@ -27,17 +27,17 @@ function App() {
 
         <PrivateRoutes exact path="/user/dashboard" component={UserDashboard} />
         <AdminRoutes path="/admin/dashboard" exact component={AdminDashboard} />
-        <Route
+        <PrivateRoutes
           path="/user/dashboard/profile/general"
           exact
           component={GeneralProfile}
         />
-        <Route
+        <PrivateRoutes
           path="/user/dashboard/profile/changepassword"
           exact
           component={ChangePassword}
         />
-        <Route
+        <PrivateRoutes
           path="/user/dashboard/profile/overview"
           exact
           component={Overview}

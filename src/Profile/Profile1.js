@@ -4,12 +4,10 @@ import "./profile.css";
 import user_1 from "../images/user_1.svg";
 import linkedIn from "../images/linkedIn.svg";
 import envelope from "../images/envelope.svg";
-import Group01 from "../images/Group 30250.svg";
 import portfolio from "../images/portfolio.svg";
 import general from "../images/general.svg";
 import search from "../images/search.svg";
 import security from "../images/security.svg";
-import roundeUser from "../images/roundeUser.svg";
 import { Link } from "react-router-dom";
 
 function Profile1() {

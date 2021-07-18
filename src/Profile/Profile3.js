@@ -4,8 +4,7 @@ import ProfileBase from "./ProfileBase";
 function Profile3() {
   return (
     <ProfileBase>
-      <h2>Shubham!! start from here</h2>
-      <h1>hey</h1>
+      <h2>under maitainance...</h2>
     </ProfileBase>
   );
 }

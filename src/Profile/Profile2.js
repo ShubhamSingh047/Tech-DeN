@@ -16,7 +16,6 @@ function Profile2() {
           <div className="profileName">{username}</div>
           <div className="professionName">Developer</div>
           <Link to="/user/dashboard/profile/general" className="link">
-            {" "}
             <div className="generalInfo-panel">
               <div className="iconss">
                 <img src={general} alt="" />
@@ -27,7 +26,7 @@ function Profile2() {
                 </div>
                 <div className="panel-subname">Profile</div>
               </div>
-            </div>{" "}
+            </div>
           </Link>
           <div className="security-panel">
             <div className="iconss">

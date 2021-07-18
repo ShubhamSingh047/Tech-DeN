@@ -69,10 +69,10 @@
 } 
 
 .notification img{
-    margin-left: -1px;
+    margin-left: 5px;
     margin-top: -1px;
-    width: 30px;
-    height: 30px;
+    width: 17px;
+    height: 17px;
 }
 .profile-pic{
     
@@ -112,6 +112,7 @@
     font-weight: 500;
     font-size: 24px;
     margin-top: 28px;
+    margin-top: -1px;
     margin-left: 25px;
     color: #362bb2;
 }
@@ -189,9 +190,12 @@ grid-template-columns: 45px 244px;
 border-radius: 7px;
 cursor: pointer;
 }
+
+
 .security-panel{
     display: grid;
     margin: 35px auto;
+    margin-top: -1px;
     width: 270px;
     height: 55px;
     background: #eceef5;
@@ -283,8 +287,6 @@ margin-top: 3px;
     display: grid;
     grid-template-rows: 90px 80px 80px;
 }
-
-
 
 .currentP{
     margin-top: 10px;

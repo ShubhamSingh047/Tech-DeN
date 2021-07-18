@@ -1,7 +1,7 @@
 import React from "react";
 import "./profile.css";
 import { Link } from "react-router-dom";
-import notify from "../images/notify.svg";
+import notify from "../images/notific.svg";
 import search from "../images/search.svg";
 import setting from "../images/setting.svg";
 import dashboard from "../images/dashboard.svg";
