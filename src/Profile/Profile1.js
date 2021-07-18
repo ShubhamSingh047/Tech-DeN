@@ -3,36 +3,50 @@ import ProfileBase from "./ProfileBase";
 import "./profile.css";
 import user_1 from "../images/user_1.svg";
 import linkedIn from "../images/linkedIn.svg";
-import notify from "../images/notify.svg";
 import envelope from "../images/envelope.svg";
 import Group01 from "../images/Group 30250.svg";
 import portfolio from "../images/portfolio.svg";
+import general from "../images/general.svg";
 import search from "../images/search.svg";
-import setting from "../images/setting.svg";
+import security from "../images/security.svg";
 import roundeUser from "../images/roundeUser.svg";
+import { Link } from "react-router-dom";
 
 function Profile1() {
+  const username = JSON.parse(localStorage.getItem("username"));
+  const email = JSON.parse(localStorage.getItem("email"));
+
   return (
     <ProfileBase>
       <div className="general">
         <div className="leftside">
-         <div className="avatarProfile"></div>
-        <div className="profileName">Vishal M</div>
-          <div className="professionName">React-dev</div>
+          <div className="avatarProfile"></div>
+          <div className="profileName">{username}</div>
+          <div className="professionName">Developer</div>
+
           <div className="generalInfo-panel">
-            <div className="iconss"> </div>
+            <div className="iconss">
+              <img src={general} alt="" />
+            </div>
             <div className="text-info-panel">
               <div className="panel-name-general">General Information</div>
               <div className="panel-subname">Profile</div>
             </div>
           </div>
-          <div className="security-panel">
-            <div className="iconss"> </div>
-            <div className="text-info-panel">
-              <div className="panel-name-security">Security</div>
-              <div className="panel-subname">Password</div>
+
+          <Link to="/user/dashboard/profile/changepassword" className="link">
+            {" "}
+            <div className="security-panel">
+              <div className="iconss">
+                {" "}
+                <img src={security} alt="" />{" "}
+              </div>
+              <div className="text-info-panel">
+                <div className="panel-name-security">Security</div>
+                <div className="panel-subname">Password</div>
+              </div>
             </div>
-          </div>
+          </Link>
         </div>
 
         <div className="rightside">
@@ -42,7 +56,7 @@ function Profile1() {
             <div className="detailField">
               <div className="subHeader">Name</div>
               <div className="mainItem">
-                <div className="fieldValue"></div>
+                <div className="fieldValue">{username}</div>
                 <div className="fieldIcon">
                   <img src={user_1} alt="" />
                 </div>
@@ -60,13 +74,13 @@ function Profile1() {
             <div className="detailField">
               <div className="subHeader">Email</div>
               <div className="mainItem">
-                <div className="fieldValue">modanwalvishal@gmail.com</div>
+                <div className="fieldValue">{email}</div>
                 <div className="fieldIcon">
                   <img src={envelope} alt="" />
                 </div>
               </div>
             </div>
-            
+
             <div className="detailFields">
               <div className="subHeader"></div>
               <div className="mainItem">

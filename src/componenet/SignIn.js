@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import Base from "./core/Base";
 import "./SignIn.css";
-import ReactLogo from "./logo/google-icon.svg";
 import { Link, Redirect } from "react-router-dom";
 import { GoogleLogin } from "react-google-login";
-import GoogleButton from "react-google-button";
 import axios from "axios";
 import { API } from "../backend";
 import { signin, authenticate, isAuthenticated } from "../auth/index";
@@ -30,7 +28,7 @@ function SignIn() {
     setValues({ ...values, error: false, laoding: true });
     signin({ email: email, password: password })
       .then((data) => {
-        console.log("first", data);
+        console.log("token and user", data);
         if (data.error) {
           setValues({
             ...values,
@@ -40,7 +38,6 @@ function SignIn() {
           });
         } else {
           authenticate(data, () => {
-            console.log("second", data);
             setValues({
               ...values,
               didRidirect: true,

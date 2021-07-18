@@ -1,6 +1,6 @@
 import React from "react";
 import "./profile.css";
-
+import { Link } from "react-router-dom";
 import notify from "../images/notify.svg";
 import search from "../images/search.svg";
 import setting from "../images/setting.svg";
@@ -11,7 +11,6 @@ function ProfileBase({ children }) {
     <div>
       <div className="topbar">
         <div className="settop">
-          {" "}
           <div className="p">
             <p>Profile</p>
           </div>
@@ -27,10 +26,14 @@ function ProfileBase({ children }) {
         </div>
       </div>
       <div className="sidebar">
-        <div className="logoTD">TD</div>
-        <div className="dashB">
-          <img src={dashboard} alt="" />
-        </div>
+        <Link to="/user/dashboard" className="link">
+          <div className="logoTD">TD</div>{" "}
+        </Link>
+        <Link to="/user/dashboard">
+          <div className="dashB">
+            <img src={dashboard} alt="" />
+          </div>
+        </Link>
         <div className="setting">
           <img src={setting} alt="" />
         </div>
