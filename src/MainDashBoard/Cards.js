@@ -2,6 +2,7 @@ import React from "react";
 import { Card, Button } from "react-bootstrap";
 import "./Cards.css";
 import { Link } from "react-router-dom";
+import { ExternalLink } from "react-external-link";
 
 const Cards = ({ group, loading }) => {
   if (loading) {
@@ -20,9 +21,9 @@ const Cards = ({ group, loading }) => {
             <Card.Title>{item.groupname}</Card.Title>
             <Card.Text>{item.description}</Card.Text>
             <Button variant="primary">
-              <Link to={item.link} className="link">
+              <ExternalLink href={item.link} className="link">
                 Join Meeting
-              </Link>
+              </ExternalLink>
             </Button>
           </Card.Body>
         </Card>
