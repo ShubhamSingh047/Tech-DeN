@@ -79,7 +79,7 @@ const Dashboard = () => {
       {/* {loading && <div>loading...</div>}
       {!loading && <Card group={group} />} */}
 
-      <Card loading={loading} group={group} />
+      <Card loading={loading} group={group} setUpdateDash={setUpdateDash} />
     </>
   );
 };

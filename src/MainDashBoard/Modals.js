@@ -3,7 +3,6 @@ import "./Modals.css";
 import "./Cards";
 import { Button, Modal } from "react-bootstrap";
 import { creategroup } from "../auth/groupAuth.js";
-import { ExternalLink } from "react-external-link";
 
 // I have used react-bootstrap for styling purposes
 

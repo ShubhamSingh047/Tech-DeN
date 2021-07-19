@@ -7,3 +7,8 @@
     color: #ffff;
     text-decoration: none;
 }
+
+.delete-icon{
+    margin-left: 225px;
+    cursor: pointer;
+}

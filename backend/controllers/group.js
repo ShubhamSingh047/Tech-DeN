@@ -34,3 +34,8 @@ exports.getAllGroup = (req, res) => {
     res.json(groups);
   });
 };
+
+
+exports.deleteGroup = (req, res) => {
+  console.log(req.body.id);
+}; 

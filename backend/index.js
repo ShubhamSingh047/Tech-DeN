@@ -30,6 +30,7 @@ const authRoute = require("./routes/auth");
 const userRoute = require("./routes/user");
 const groupRoute = require("./routes/group");
 
+
 //my routes (middleware)
 app.use("/api", authRoute);
 app.use("/api", userRoute);
