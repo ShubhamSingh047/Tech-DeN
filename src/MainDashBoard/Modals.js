@@ -3,16 +3,18 @@ import "./Modals.css";
 import "./Cards";
 import { Button, Modal } from "react-bootstrap";
 import { creategroup } from "../auth/groupAuth.js";
+import { ExternalLink } from "react-external-link";
 
 // I have used react-bootstrap for styling purposes
 
 class Modals extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       show: false,
       Gname: "",
       Descip: "",
+      link: "",
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -38,17 +40,20 @@ class Modals extends React.Component {
     creategroup({
       groupname: this.state.Gname,
       description: this.state.Descip,
+      link: this.state.link,
     })
       .then((data) => {
         if (data.error) {
           this.setState({
             Gname: "",
             Descip: "",
+            link: "",
           });
         } else {
           this.setState({
             Gname: "",
             Descip: "",
+            link: "",
           });
         }
       })
@@ -107,9 +112,26 @@ class Modals extends React.Component {
                   value={this.state.Descip}
                 />
                 <br />
+                <label style={{ color: "#8181A5", fontSize: "15px" }}>
+                  Link
+                </label>
+                <br />
+                <input
+                  style={{ backgroundColor: "ivory" }}
+                  type="text"
+                  placeholder=" Enter your Zoom/Google-Meet link"
+                  name="link"
+                  value={this.state.link}
+                  onChange={this.handleChange}
+                />
+                <br />
                 <br />
                 <hr />
-                <button type="submit" className="createGroup">
+                <button
+                  type="submit"
+                  className="createGroup"
+                  onClick={() => this.props.updateDashboard()}
+                >
                   Create
                 </button>
               </form>

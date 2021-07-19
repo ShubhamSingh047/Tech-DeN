@@ -2,11 +2,11 @@ const Group = require("../models/group.js");
 
 exports.creategroup = (req, res) => {
   console.log(req.body);
-  let link = req.body.groupname + "link";
+ 
   const group = new Group({
     groupname: req.body.groupname,
     description: req.body.description,
-    link: link,
+    link: req.body.link,
   });
   group.save((error, group) => {
     if (error) {

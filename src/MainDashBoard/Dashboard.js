@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 const Dashboard = () => {
   const [group, setGroup] = useState([]);
   const [loading, setloading] = useState(false);
+  const [updateDash, setUpdateDash] = useState(false);
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -21,10 +22,16 @@ const Dashboard = () => {
       const recievedData = res.data;
       setGroup(recievedData);
       setloading(false);
+      setUpdateDash(false);
     };
     fetchPosts();
-  }, []);
+  }, [updateDash]);
 
+  const updateDashboard = () => {
+    setUpdateDash(true);
+  };
+
+  console.log("dash", updateDash);
   console.log(group);
 
   return (
@@ -67,7 +74,7 @@ const Dashboard = () => {
       </Dropdown>
       <hr />
 
-      <Modals className="modal" />
+      <Modals className="modal" updateDashboard={updateDashboard} />
 
       {/* {loading && <div>loading...</div>}
       {!loading && <Card group={group} />} */}

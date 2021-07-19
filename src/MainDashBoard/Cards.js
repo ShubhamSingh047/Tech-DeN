@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
 import "./Cards.css";
+import { Link } from "react-router-dom";
 
 const Cards = ({ group, loading }) => {
   if (loading) {
@@ -18,7 +19,11 @@ const Cards = ({ group, loading }) => {
           <Card.Body>
             <Card.Title>{item.groupname}</Card.Title>
             <Card.Text>{item.description}</Card.Text>
-            <Button variant="primary">{item.link}</Button>
+            <Button variant="primary">
+              <Link to={item.link} className="link">
+                Join Meeting
+              </Link>
+            </Button>
           </Card.Body>
         </Card>
       ))}
