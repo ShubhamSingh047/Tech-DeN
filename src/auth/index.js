@@ -33,6 +33,9 @@ export const signin = (user) => {
 
 export const authenticate = (data, next) => {
   if (typeof window !== "undefined") {
+    localStorage.setItem("username", JSON.stringify(data.user.firstname));
+    localStorage.setItem("email", JSON.stringify(data.user.email));
+
     localStorage.setItem("jwt", JSON.stringify(data));
     next();
   }
@@ -52,6 +55,8 @@ export const isAuthenticated = () => {
 export const signout = (next) => {
   if (typeof window !== "undefined") {
     localStorage.removeItem("jwt");
+    localStorage.removeItem("username");
+    localStorage.removeItem("email");
     next();
 
     return fetch(`${API}/signout`, {
