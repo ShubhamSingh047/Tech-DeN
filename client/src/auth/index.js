@@ -35,7 +35,6 @@ export const authenticate = (data, next) => {
   if (typeof window !== "undefined") {
     localStorage.setItem("username", JSON.stringify(data.user.firstname));
     localStorage.setItem("email", JSON.stringify(data.user.email));
-
     localStorage.setItem("jwt", JSON.stringify(data));
     next();
   }

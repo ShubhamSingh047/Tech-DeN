@@ -7,7 +7,11 @@ const Navbar = () => {
   return (
     <div className="main_nav">
       <div className="logo">
-        <a href="#">logo</a>
+        {/* <a href="#">logo</a> */}
+        <div style={{ float: "left", display: "flex", alignContent: "left" }}>
+          <span style={{ color: "black", fontWeight: "bold" }}>TECH</span>
+          <span style={{ color: "#362BB2", fontWeight: "bold" }}>DEN</span>
+        </div>
       </div>
       <ul className="list">
         {!isAuthenticated() && (

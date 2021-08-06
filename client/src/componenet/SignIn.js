@@ -77,7 +77,7 @@ function SignIn() {
         <div className="form_signIn">
           <form action="submit">
             <h2>Welcome to TechHouse Sign In to get started</h2>
-            <p className="signIn_txt">Enter your details to procced further</p>
+            {/* <p className="signIn_txt">Enter your details to procced further</p> */}
 
             <label htmlFor="">Email </label>
 

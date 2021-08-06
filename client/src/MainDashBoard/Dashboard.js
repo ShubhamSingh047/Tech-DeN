@@ -53,14 +53,14 @@ const Dashboard = () => {
         <Dropdown.Toggle>Profile</Dropdown.Toggle>
         <Dropdown.Menu>
           <Dropdown.Item href="#/action-1">
-            <Link className="link" to="/user/dashboard/profile/general">
+            <Link className="links" to="/user/dashboard/profile/general">
               Profile
             </Link>
           </Dropdown.Item>
           <Dropdown.Item href="#/action-2">
             <Link
               to="/"
-              className="link"
+              className="links"
               onClick={() => {
                 signout(() => {
                   console.log("signout from dashbaord");
